@@ -4,7 +4,7 @@
 # matrix.target=${FOLDER_NAME}
 
 ACTIONS_VERSION="1.0.3"
-
+export SOURCE_NAME="immortalwrt"
 function TIME() {
 Compte=$(date +%Y年%m月%d号%H时%M分)
   [[ -z "$1" ]] && {
@@ -159,7 +159,14 @@ OFFICIAL)
 ;;
 esac
 
+export GITHUB_WORKSPACE="/path/to/workspace"
 
+
+if [[ -d "${GITHUB_WORKSPACE}/openwrt/package/base-files/bin" ]]; then
+  echo "GENE_PATH=${GITHUB_WORKSPACE}/openwrt/package/base-files/files/bin/config_generate" >> ${GITHUB_ENV}
+else
+  echo "GENE_PATH=${GITHUB_WORKSPACE}/openwrt/package/base-files/luci2/bin/config_generate" >> ${GITHUB_ENV}
+fi
 export DIY_PART_SH="diy-part.sh"
 echo "DIY_PART_SH=${DIY_PART_SH}" >> ${GITHUB_ENV}
 echo "HOME_PATH=${GITHUB_WORKSPACE}/openwrt" >> ${GITHUB_ENV}
