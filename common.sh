@@ -1,6 +1,6 @@
 #!/bin/bash
-# https://github.com/shidahuilang/openwrt
-# common Module by shidahuilang
+# https://github.com/xiaobaoji/openwrt
+# common Module by xiaobaoji
 # matrix.target=${FOLDER_NAME}
 
 ACTIONS_VERSION="1.0.3"
@@ -26,7 +26,7 @@ Compte=$(date +%Y年%m月%d号%H时%M分)
 
 function settings_variable() {
 cd ${GITHUB_WORKSPACE}
-bash <(curl -fsSL https://raw.githubusercontent.com/shidahuilang/common/main/custom/first.sh)
+bash <(curl -fsSL https://raw.githubusercontent.com/xiaobaoji/common/main/custom/first.sh)
 }
 
 function Diy_variable() {
